@@ -6,16 +6,31 @@ import { createBook } from '../actions/bookActions'
 class BookForm extends Component {
   state = {
     title: '',
-    publication_year: ''
+    publication_year: '',
+    errors: false
+  }
+
+  constructor(){
+    super();
+    const year = (new Date(1990,1,1)).getFullYear();
+    this.years = Array.from(new Array(30),(val, index) => index + year);
   }
 
 	handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state)
     const title = this.state.title;
     const publication_year = parseInt(this.state.publication_year);
 
-    this.props.createBook({title, publication_year});
+    if(title !== '' && publication_year > 0) {
+      this.props.createBook({title, publication_year});
+      this.setState({
+        errors: false
+      })
+    } else {
+      this.setState({
+        errors: true
+      })
+    }
     
     this.setState({
       title: '',
@@ -24,18 +39,27 @@ class BookForm extends Component {
   }
   
 	render () {
-		return (
+    return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form className="ui form" onSubmit={this.handleSubmit}>
+          <h4 className="ui dividing header">Add a New Book</h4>
           <div className="field">
-            <label>Title</label>
+            <label style={{ color: this.state.errors === true ? 'red' : 'black' }}>Title</label>
             <input type="text" placeholder="title" value={this.state.title} onChange={(e) => this.setState({ title: e.target.value })} />
           </div>
           <div className="field">
             <label>Publication Year</label>
-            <input type="text" placeholder="title" value={this.state.publication_year} onChange={(e) => this.setState({ publication_year: e.target.value })} />
+            <select className="ui search dropdown" value={this.state.publication_year} onChange={(e) => this.setState({ publication_year: e.target.value })}>
+              <option key={`year0`} value={0}>Select a Year</option>
+              {
+                this.years.map((year, index) => {
+                  return <option key={year} value={year}>{year}</option>
+                })
+              }
+            </select>
+
           </div>
-          <button>Submit</button>
+          <button className="ui primary button">Submit</button>
         </form>
       </div>
     );

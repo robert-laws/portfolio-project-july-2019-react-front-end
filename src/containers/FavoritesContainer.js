@@ -6,10 +6,20 @@ import { connect } from 'react-redux';
 class FavoritesContainer extends Component {
   render() {
     return (
-      <div>
-        <FavoriteBooksList favoriteBooksList={this.props.favoriteBooks} />
-        <hr />
-        <BookStats stats={this.props.favoriteBooks} />
+      <div className="ui container grid" style={{marginTop: 10}}>
+        <div className="ui row">
+          <div className="ui column sixteen wide">
+            <h1>Your Favorite Books</h1>
+          </div>
+        </div>
+        <div className="ui row">
+          <div className="ui column eight wide">
+            <FavoriteBooksList favoriteBooksList={this.props.favoriteBooks} />
+          </div>
+          <div className="ui column eight wide">
+            <BookStats stats={this.props.favoriteBooks} />
+          </div>
+        </div>
       </div>
     )
   }

@@ -11,16 +11,23 @@ class FavoriteBooksList extends Component {
   render() {
     const favBooks = this.props.favoriteBooksList.map(book => { 
       return (
-        <div style={{margin: 20}} key={book.id}>
-          <Book id={book.id} title={book.title} />
-          <button value={book.id} onClick={() => this.props.removeFromFavoriteBooks(book.id)}>remove book from favorites</button>
-        </div>
+        <>
+          <div key={+new Date() + Math.random()} className="ui card">
+            <Book key={+new Date() + Math.random()} id={book.id} title={book.title} />
+            <div className="extra content">
+              <button className="ui primary button" key={+new Date() + Math.random()} value={book.id} onClick={() => this.props.removeFromFavoriteBooks(book.id)}>remove book from favorites</button>
+            </div>
+          </div>
+        </>
       )
     })
 
     return (
       <div>
-        {this.showFavorites(favBooks)}
+        <h4 className="ui dividing header">Favorites</h4>
+        <div>
+          {this.showFavorites(favBooks)}
+        </div>
       </div>
     )
   }

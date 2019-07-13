@@ -12,19 +12,27 @@ class BooksContainer extends Component {
 
   render() {
     return (
-      <div className="ui container grid" style={{marginTop: 10}}>
-        <div className="ui row">
-          <div className="column eight wide">
-            <BookList allBooks={this.props.books} />
-          </div>
-          <div className="column four wide">
-            <BookForm />
-          </div>
-          <div className="column four wide">
-            <FavoriteBooksList favoriteBooksList={this.props.favoriteBooks} />
+      <>
+        <div className="ui container grid" style={{marginTop: 10}}>
+          <div className="ui row">
+            <div className="ui column sixteen wide">
+              <h1>Books</h1>
+            </div>
           </div>
         </div>
-      </div>
+        <div className="ui container grid" style={{marginTop: 10}}>
+          <div className="ui row">
+            <div className="ui column nine wide">
+              <BookList allBooks={this.props.books.reverse()} />
+            </div>
+            <div className="ui column seven wide">
+              <BookForm />
+            <div style={{margin: '50px 0'}}></div>
+              <FavoriteBooksList favoriteBooksList={this.props.favoriteBooks} />
+            </div>
+          </div>
+        </div>
+      </>
     )
   }
 }

@@ -3,9 +3,10 @@ import React from 'react';
 const BookStats = props => {
   return (
     <div>
-      Book Stats...
-
-      Number of Books: {props.stats.length}
+      <h4 className="ui dividing header">Book Statistics</h4>
+      <h5>
+        Number of Books: {props.stats.length}
+      </h5>
     </div>
   )
 }

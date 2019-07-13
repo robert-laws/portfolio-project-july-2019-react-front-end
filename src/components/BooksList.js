@@ -12,16 +12,21 @@ class BooksList extends Component {
   render() {
     const allBooks = this.props.allBooks.map(book => { 
       return (
-        <div style={{margin: 20}} key={book.id}>
-          <Book id={book.id} title={book.title} pub_year={book.publication_year} />
-          <button value={book.id} onClick={this.handleDeleteClick}>delete this book</button>
-          <button value={book.id} onClick={() => this.props.addToFavoriteBooks(book)}>add book to favorites</button>
-        </div>
+        <>
+          <div key={+new Date() + Math.random()} className="ui card" style={{maxWidth: 180, float: 'left', margin: '0 10px 25px'}}>
+            <Book id={book.id} title={book.title} pub_year={book.publication_year} />
+            <div className="extra content">
+              <button className="ui primary button" value={book.id} onClick={() => this.props.addToFavoriteBooks(book)} style={{marginBottom: 10}}>add book to favorites</button>
+              <button className="tiny ui red button" value={book.id} onClick={this.handleDeleteClick}>delete this book</button>
+            </div>
+          </div>
+        </>
       )
     })
 
     return (
       <div>
+        <h4 className="ui dividing header">Books Available</h4>
         {allBooks}
       </div>
     )
