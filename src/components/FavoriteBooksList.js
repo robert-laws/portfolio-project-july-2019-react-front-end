@@ -4,12 +4,8 @@ import { connect } from 'react-redux';
 import { removeFromFavoriteBooks } from '../actions/bookFavoriteActions';
 
 class FavoriteBooksList extends Component {
-  showFavorites(favs) {
-    if(favs.length > 0) {
-      return favs;
-    } else {
-      return <h3>No favorites Yet</h3>;
-    }
+  showFavorites(favorites) {
+    return favorites.length > 0 ? favorites : <h3>No favorites Yet</h3>;
   }
 
   render() {
