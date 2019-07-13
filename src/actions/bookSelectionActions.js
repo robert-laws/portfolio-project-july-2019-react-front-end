@@ -29,6 +29,7 @@ export const deleteBook = id => {
 
   return dispatch => {
     fetch(`http://localhost:3001/api/books/${id}`, request)
-      .then(() => dispatch({ type: 'DELETE_BOOK', id }));
+      .then(() => dispatch({ type: 'DELETE_BOOK', id }))
+      .then(() => dispatch({ type: 'REMOVE_FAVORITE_BOOKS', id}));
     }
 };

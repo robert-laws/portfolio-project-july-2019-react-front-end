@@ -7,7 +7,8 @@ const Header = () => {
       <div className="ui row">
         <NavLink to="/" exact>Home</NavLink> | 
         <NavLink to="/about">About</NavLink> | 
-        <NavLink to="/books">Books</NavLink>
+        <NavLink to="/books">Books</NavLink> |
+        <NavLink to="/favorites">Favorites</NavLink>
       </div>
     </div>
   )
