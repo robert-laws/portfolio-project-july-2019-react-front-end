@@ -6,6 +6,8 @@ export default function(state = [], action) {
       return action.books
     case 'CREATE_BOOKS':
       return state.concat(action.book);
+    case 'DELETE_BOOK':
+      return state.filter(book => book.id !== parseInt(action.id));
     default:
       return state;
     }

@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
-import { fetchBooks } from '../actions/bookActions';
+import Book from './Book';
+import { deleteBook } from '../actions/bookSelectionActions';
 import { connect } from 'react-redux';
 
 class BooksList extends Component {
-  componentDidMount() {
-    this.props.fetchBooks();
+  handleClick = (event) => {
+    this.props.deleteBook(event.target.value);
   }
 
   render() {
-    const allBooks = this.props.books.map(book => <p key={book.id}>{book.title} - {book.publication_year}</p>)
+    const allBooks = this.props.allBooks.map(book => <div key={book.id}><Book id={book.id} title={book.title} pub_year={book.publication_year} /><button value={book.id} onClick={this.handleClick}>delete this book</button></div>)
 
     return (
       <div>
@@ -18,10 +19,4 @@ class BooksList extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    books: state.books
-  }
-}
-
-export default connect(mapStateToProps, { fetchBooks })(BooksList);
+export default connect(null, { deleteBook })(BooksList);
