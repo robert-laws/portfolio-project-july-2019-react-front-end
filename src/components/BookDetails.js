@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setBook } from '../actions/bookSelectionActions';
+import image from '../Images/book-cover.png';
 
 class BookDetails extends Component {
   componentDidMount() {
@@ -22,9 +23,21 @@ class BookDetails extends Component {
         </div>
         <div className="ui container grid" style={{marginTop: 10}}>
           <div className="ui row">
-            <div className="column sixteen wide">
-              <h5>{book.title}</h5>
-              <p>{book.publication_year}</p>        
+            <div className="column six wide">
+              <div className="ui segment">
+                <h3>{book.title}</h3>
+                <div className="ui divider"></div>
+                <p><strong>Author</strong>: {book.author}</p>  
+                <p><strong>Description</strong>: {book.description}</p>  
+                <p><strong>Publication Year</strong>: {book.publication_year}</p>  
+                <p><strong>Total Pages</strong>: {book.total_pages}</p>  
+                <p><strong>Rating</strong>: {book.rating} <i className="star yellow icon"></i></p>  
+              </div>
+            </div>
+            <div className="column ten wide">
+              <div className="image">
+                <img className="ui medium rounded image" src={image} alt={book.title} />
+              </div>     
             </div>
           </div>
         </div>

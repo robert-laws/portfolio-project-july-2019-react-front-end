@@ -5,7 +5,7 @@ import { removeFromFavoriteBooks } from '../actions/bookFavoriteActions';
 
 class FavoriteBooksList extends Component {
   showFavorites(favorites) {
-    return favorites.length > 0 ? favorites : <h3>No favorites Yet</h3>;
+    return favorites.length > 0 ? favorites : <h3>No Books Yet</h3>;
   }
 
   render() {
@@ -13,7 +13,7 @@ class FavoriteBooksList extends Component {
       return (
         <>
           <div key={+new Date() + Math.random()} className="ui card">
-            <Book key={+new Date() + Math.random()} id={book.id} title={book.title} />
+            <Book key={+new Date() + Math.random()} id={book.id} title={book.title} pub_year={book.publication_year} author={book.author} description={book.description} total_pages={book.total_pages} rating={book.rating} />
             <div className="extra content">
               <button className="ui primary button" key={+new Date() + Math.random()} value={book.id} onClick={() => this.props.removeFromFavoriteBooks(book.id)}>remove book from favorites</button>
             </div>
@@ -24,7 +24,7 @@ class FavoriteBooksList extends Component {
 
     return (
       <div>
-        <h4 className="ui dividing header">Favorites</h4>
+        <h4 className="ui dividing header">Reading List</h4>
         <div>
           {this.showFavorites(favBooks)}
         </div>

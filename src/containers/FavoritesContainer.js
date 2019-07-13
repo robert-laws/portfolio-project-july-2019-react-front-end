@@ -9,7 +9,7 @@ class FavoritesContainer extends Component {
       <div className="ui container grid" style={{marginTop: 10}}>
         <div className="ui row">
           <div className="ui column sixteen wide">
-            <h1>Your Favorite Books</h1>
+            <h1>Your Reading List</h1>
           </div>
         </div>
         <div className="ui row">

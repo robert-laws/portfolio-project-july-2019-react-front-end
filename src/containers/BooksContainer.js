@@ -28,7 +28,9 @@ class BooksContainer extends Component {
             <div className="ui column seven wide">
               <BookForm />
             <div style={{margin: '50px 0'}}></div>
-              <FavoriteBooksList favoriteBooksList={this.props.favoriteBooks} />
+              <div className="ui orange segment">
+                <FavoriteBooksList favoriteBooksList={this.props.favoriteBooks} />
+              </div>
             </div>
           </div>
         </div>

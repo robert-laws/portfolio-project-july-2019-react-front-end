@@ -7,10 +7,10 @@ const Header = () => {
       <div className="ui row">
         <div className="column sixteen wide">
           <div className="ui inverted menu">
-            <NavLink className="item" to="/" exact>Home</NavLink> | 
-            <NavLink className="item" to="/about">About</NavLink> | 
-            <NavLink className="item" to="/books">Books</NavLink> |
-            <NavLink className="item" to="/favorites">Favorites</NavLink>
+            <NavLink className="item" to="/" exact>Home</NavLink> 
+            <NavLink className="item" to="/about">About</NavLink> 
+            <NavLink className="item" to="/books">Books</NavLink>
+            <NavLink className="item" to="/favorites">Reading List</NavLink>
           </div>
         </div>
       </div>

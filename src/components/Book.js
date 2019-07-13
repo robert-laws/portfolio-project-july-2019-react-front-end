@@ -2,19 +2,31 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import image from '../Images/book-cover.png';
 
-const Book = props => {
+const Book = ({id, title, author, description, pub_year, total_pages, rating}) => {
   return (
     <>
       <div className="image">
-        <img src={image} alt={props.title} />
+        <img src={image} alt={title} />
       </div>
       <div className="content">
-      <Link className="header" to={`/books/${props.id}`}>{props.title}</Link>
+      <Link className="header" to={`/books/${id}`}>{title}</Link>
         <div className="meta">
-          <span className="date">Author...</span>
+          <span className="date">{author}</span>
         </div>
         <div className="description">
-          Description...
+          {description}
+        </div>
+        <div style={{marginTop: 15}}>
+          <hr style={{opacity: '0.15'}} />
+        </div>
+        <div style={{marginTop: 15}}>
+          Publication year: {pub_year}
+        </div>
+        <div style={{marginTop: 15}}>
+          Total pages: {total_pages}
+        </div>
+        <div style={{marginTop: 15}}>
+          Rating: {rating} <i className="star yellow icon"></i>
         </div>
       </div>
     </>
