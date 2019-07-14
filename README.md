@@ -10,7 +10,7 @@ Additional features include the incorporation of the [Semantic-UI](https://seman
 
 To install the application, follow these steps:
 
-1. Fork and/or clone the [repository](https://github.com/robert-laws/portfolio-project-july-2019-react-front-end.git) for the app and the [respistory for the back-end api](https://github.com/robert-laws/portfolio-project-july-2019-rails-back-end-api)
+1. Fork and/or clone the [repository](https://github.com/robert-laws/portfolio-project-july-2019-react-front-end.git) for the app and the [repository for the back-end api](https://github.com/robert-laws/portfolio-project-july-2019-rails-back-end-api)
 
 1. From the root of the front-end application folder, run ``npm install``
 
@@ -28,7 +28,7 @@ To install the application, follow these steps:
 
 Please refer to each project's style guidelines and guidelines for submitting patches and additions. In general, we follow the "fork-and-pull" Git workflow.
 
-1. Fork the repo on GitHub
+1. Fork the repository on GitHub
 1. Clone the project to your own machine
 1. Commit changes to your own branch
 1. Push your work back up to your fork
