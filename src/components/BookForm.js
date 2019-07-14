@@ -32,6 +32,12 @@ class BookForm extends Component {
     if(title !== '' && publication_year > 0) {
       this.props.createBook({title, author, description, publication_year, total_pages, rating});
       this.setState({
+        title: '',
+        author: '',
+        description: '',
+        publication_year: '',
+        total_pages: '',
+        rating: '',
         errors: false
       })
     } else {
@@ -39,11 +45,6 @@ class BookForm extends Component {
         errors: true
       })
     }
-    
-    this.setState({
-      title: '',
-      publication_year: ''
-    })
   }
   
 	render () {
