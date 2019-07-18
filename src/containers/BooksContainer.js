@@ -23,7 +23,7 @@ class BooksContainer extends Component {
         <div className="ui container grid" style={{marginTop: 10}}>
           <div className="ui row">
             <div className="ui column nine wide">
-              <BookList allBooks={this.props.books.reverse()} />
+              <BookList allBooks={this.props.books} />
             </div>
             <div className="ui column seven wide">
               <BookForm />
