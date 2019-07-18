@@ -12,7 +12,7 @@ class BooksList extends Component {
   render() {
     const allBooks = this.props.allBooks.map(book => { 
       return (
-        <div key={+new Date() + Math.random()}>
+        <div key={book.id}>
           <div className="ui card" style={{maxWidth: 180, minHeight: 700, float: 'left', margin: '0 10px 25px'}}>
             <Book id={book.id} title={book.title} pub_year={book.publication_year} author={book.author} description={book.description} total_pages={book.total_pages} rating={book.rating} />
             <div className="extra content">

@@ -11,7 +11,7 @@ class FavoriteBooksList extends Component {
   render() {
     const favBooks = this.props.favoriteBooksList.map(book => { 
       return (
-        <div key={+new Date() + Math.random()} style={{marginBottom: 20}}>
+        <div key={book.id} style={{marginBottom: 20}}>
           <div className="ui card">
             <Book id={book.id} title={book.title} pub_year={book.publication_year} author={book.author} description={book.description} total_pages={book.total_pages} rating={book.rating} />
             <div className="extra content">
