@@ -13,7 +13,7 @@ class FavoriteBooksList extends Component {
       return (
         <div key={book.id} style={{marginBottom: 20}}>
           <div className="ui card">
-            <Book id={book.id} title={book.title} pub_year={book.publication_year} author={book.author} description={book.description} total_pages={book.total_pages} rating={book.rating} />
+            <Book book={book} />
             <div className="extra content">
               <button className="ui primary button" value={book.id} onClick={() => this.props.removeFromFavoriteBooks(book.id)}>remove book from favorites</button>
             </div>
